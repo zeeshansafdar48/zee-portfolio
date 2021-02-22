@@ -1,77 +1,120 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    title: `Zeeshan Safdar`,
+    description: `Front-End Software Engineer with a focus on JavaScript and React.js. I have more than 10 years experience working in software engineering.`,
+    author: `Zeeshan Safdar <zeeshan7826@gmail.com>`,
+    siteUrl: `https://herper.io`,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    `gatsby-plugin-eslint`,
+    `gatsby-plugin-react-helmet`,
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
+        name: `images`,
+        path: `${__dirname}/src/assets`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-plugin-module-resolver',
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
+        root: './src',
+        aliases: {
+          Atoms: './components/atoms',
+          Molecules: './components/molecules',
+          Organisms: './components/organisms',
+          Templates: './components/templates',
+          Assets: './assets',
+          Context: './context',
+          Data: './data',
+          Helpers: './helpers',
+          Hooks: './hooks',
+          static: {
+            root: './public', // <- will used as this alias' root dir
+            alias: './static', // <- will become ./public/static
           },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
+        },
+      },
+    },
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn:
+          'https://0029c0e1980d488eb702e79b1303a83e@o383121.ingest.sentry.io/5212982',
+        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+        environment: process.env.NODE_ENV,
+        enabled: (() =>
+          ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#78C8D7`,
+        // Disable the loading spinner.
+        showSpinner: false,
       },
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
+      resolve: `gatsby-plugin-react-svg`,
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        rule: {
+          include: /images/,
+        },
+      },
+    },
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: `zqytr868z2zh`,
+    //     accessToken: `O6XizypIMt-waoepOGupGOH6PsfM5nObltkz-uOeQlc`,
+    //   },
+    // },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: 'Portfolio',
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: 'portfolio',
+        // Url to query from
+        url:
+          'https://api-ap-northeast-1.graphcms.com/v2/cklgnu8lhschh01xq4dji6ji7/master',
       },
     },
     {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+        typekit: {
+          id: `gfc7wqc`,
+          families: ['brandon-grotesque'],
+        },
       },
-    }, // must be after other CSS plugins
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Jacob Herper Portfolio`,
+        short_name: `Herper.io`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#e94e1b`,
+        display: `standalone`,
+        icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
-}
+};

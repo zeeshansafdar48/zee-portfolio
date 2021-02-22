@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es2015", "es2017"],
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "Atoms/*": ["./src/components/atoms/*"],
+      "Molecules/*": ["./src/components/molecules/*"],
+      "Organisms/*": ["./src/components/organisms/*"],
+      "Templates/*": ["./src/components/templates/*"],
+      "Assets/*": ["./src/assets/*"],
+      "Context/*": ["./src/context/*"],
+      "Data/*": ["./src/data/*"],
+      "Helpers/*": ["./src/helpers/*"],
+      "Hooks/*": ["./src/hooks/*"]
+    }
+  },
+  "include": ["./src/**/*", "custom.d.ts"]
+}
