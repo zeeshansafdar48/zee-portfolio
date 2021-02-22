@@ -95,7 +95,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-// fluid {
-//   ...GatsbyContentfulFluid
-// }
