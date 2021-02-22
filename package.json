@@ -49,7 +49,6 @@
     "styled-theming": "^2.2.0"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^6.0.0",
     "@testing-library/dom": "^7.19.0",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
@@ -70,7 +69,6 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-html": "^6.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
@@ -106,19 +104,12 @@
   "scripts": {
     "build": "gatsby build",
     "check-types": "tsc",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
     "develop": "gatsby develop",
     "format:check": "yarn prettier --list-different",
     "format": "yarn prettier . --write",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "test": "jest",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "test:lint:fix": "eslint --ignore-path .gitignore . --fix && prettier --ignore-path .gitignore --write \"**/*.+(tsx|js|json|md)\"",
-    "test:lint": "jest --config jest/jest.lint.js",
-    "test:watch": "jest --watch",
     "validate": "yarn format:check && yarn test:lint",
     "snyk-protect": "snyk protect"
   },
