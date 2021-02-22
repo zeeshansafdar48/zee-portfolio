@@ -5762,12 +5762,7 @@
   "resolved" "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz"
   "version" "1.0.1"
 
-"cypress-axe@^0.8.1":
-  "integrity" "sha512-hX48+r5n7Ns7CHkn601Ag0JiCG1vby5+g7QhlP8X+mkiVYpTLpXAPiiaKFj9QTTCdZSI5+0UqwIxA+ShTsr5tA=="
-  "resolved" "https://registry.npmjs.org/cypress-axe/-/cypress-axe-0.8.1.tgz"
-  "version" "0.8.1"
-
-"cypress@*", "cypress@^2.1.0 || ^3.0.0 || ^4.0.0", "cypress@^3.1.1 || ^4.0.2", "cypress@^4.9.0":
+"cypress@*", "cypress@^2.1.0 || ^3.0.0 || ^4.0.0":
   "integrity" "sha512-qGxT5E0j21FPryzhb0OBjCdhoR/n1jXtumpFFSBPYWsaZZhNaBvc3XlBUDEZKkkXPsqUFYiyhWdHN/zo0t5FcA=="
   "resolved" "https://registry.npmjs.org/cypress/-/cypress-4.9.0.tgz"
   "version" "4.9.0"

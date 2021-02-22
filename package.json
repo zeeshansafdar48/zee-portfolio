@@ -65,8 +65,6 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-gatsby": "^0.5.0",
     "canvas": "^2.6.1",
-    "cypress": "^4.9.0",
-    "cypress-axe": "^0.8.1",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
