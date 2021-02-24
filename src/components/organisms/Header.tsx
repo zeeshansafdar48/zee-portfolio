@@ -39,12 +39,7 @@ const Header = () => {
 
   return (
     <Head>
-      <Toggler
-        initial={false}
-        animate={isOpen ? 'open' : 'closed'}
-        custom={height}
-        ref={containerRef}
-      >
+      <Toggler initial={false} animate={isOpen ? 'open' : 'closed'} custom={height} ref={containerRef}>
         <Background className="menu-background" variants={sidebar} />
         <Nav toggle={() => toggleOpen()} />
         <MenuToggle toggle={() => toggleOpen()} />
@@ -54,7 +49,7 @@ const Header = () => {
           <Logo />
         </Link>
       </LogoWrapper>
-      <ThemeToggle data-testid="themeToggle" />
+      {/* <ThemeToggle data-testid="themeToggle" /> */}
     </Head>
   );
 };

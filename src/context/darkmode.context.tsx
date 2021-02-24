@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const defaults = {
-  darkMode: true,
+  darkMode: false,
   changeMode: () => {},
 };
 
