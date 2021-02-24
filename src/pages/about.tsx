@@ -19,7 +19,8 @@ const About = () => {
   const [filter, setFilter] = useState<string>('');
 
   const truncatedJobs = jobs.slice(0, 2);
-  const displayJobs = showJobs ? jobs : truncatedJobs;
+  //const displayJobs = showJobs ? jobs : truncatedJobs;
+  const displayJobs = jobs;
 
   const skillCategories = Object.keys(skills);
   return (
@@ -28,24 +29,21 @@ const About = () => {
       <Container>
         <Section>
           <Name data-testid="headline">Hey, I'm Zeeshan Safdar</Name>
-          <JobTitle>A senior Front-End Engineer from London, UK</JobTitle>
+          <JobTitle>A Software Engineer from Lahore, Pakistan</JobTitle>
           <Text>
-            As a passionate front-end developer, I create amazing websites and web apps to make the internet a better
-            place. I am an advocate for web performance and accessibility as well as a JAMstack enthusiast with
-            experience in serverless technologies.
+            As a passionate software engineer 😃, I create amazing websites and web apps to make the internet a better
+            place. I am an advocate for web performance and accessibility as well as a MERN Stack enthusiast.
           </Text>
           <Text>
-            I am {age('1990-11-06')} years old and have been a web developer for as long as I can think. The
-            technologies I work with are JavaScript, HTML and CSS with a focus on the frameworks React.js, Gatsby,
-            Next.js, Node and Express. I use code not only to do my day-to-day job, but also to solve everyday problems
-            I come across.
+            I am {age('1996-05-31')} years old and have been a web developer for as long as I can think. The
+            technologies I work with are JavaScript, HTML and CSS with a focus on the frameworks React.js, Gatsby, ,
+            Node and Express. I use code not only to do my day-to-day job, but also to solve everyday problems I come
+            across.
           </Text>
           <Text>
-            When I am not writing code I love to spend time with my wife and {age('2018-05-26')} year old daughter at
-            home in London or travelling around the world. We are quite a multi-cultural family with me having grown up
-            in Germany 🇩🇪 and my wife being from Mexico 🇲🇽, which is why we raise our daughter trilingual. I myself
-            speak five languages (some better than others). Furthermore I enjoy cooking fresh food when I come home
-            after a long day at the office.
+            When I am not writing code I love to spend time with my family 👨‍👩‍👧‍👦 and read latest technologies articles
+            which help to keep me up-to-date. Furthermore I enjoy playing Cricket 🏏 at each weekend after a long week
+            at the office.
           </Text>
         </Section>
         <Section>
@@ -79,6 +77,7 @@ const About = () => {
                 'Flexible and adaptive',
                 'Team player',
                 'Always on time',
+                'Attention to Detail',
               ].map((item, index) => (
                 <Badge key={`softskill-${index + 1}`} className="--softskill">
                   {item}
@@ -88,11 +87,8 @@ const About = () => {
             <aside>
               <h2>Languages</h2>
               <ul>
-                <li>🇬🇧 English (bilingual)</li>
-                <li>🇩🇪 German (bilingual)</li>
-                <li>🇪🇸 Spanish (intermediate)</li>
-                <li>🇮🇹 Italian (basic)</li>
-                <li>🇷🇺 Russian (basic)</li>
+                <li>🇬🇧 English (spoken)</li>
+                <li>🇵🇰 Urdu (native)</li>
               </ul>
             </aside>
           </WithSidebar>
@@ -110,12 +106,12 @@ const About = () => {
               </Job>
             ))}
           </Jobs>
-          <ReadMore onClick={() => toggleJobs()}>{!showJobs ? 'Show more' : 'Show less'}</ReadMore>
+          {/* <ReadMore onClick={() => toggleJobs()}>{!showJobs ? 'Show more' : 'Show less'}</ReadMore> */}
         </Section>
         <Section>
           <Centre>
             <Text>Recruiters, you can find my up-to-date CV as a PDF download by clicking the button below.</Text>
-            <Button href="/docs/cv-jacob_herper-2020.pdf" download="jacob_herper-cv.pdf">
+            <Button href="/docs/Zeeshan_Safdar-cv.pdf" download="Zeeshan_Safdar-cv.pdf">
               Download CV
             </Button>
           </Centre>
@@ -178,9 +174,9 @@ const Badge = styled.span`
   color: #fff;
 
   &.--technologies {
-    background: #3e4153;
+    background: #3e4188;
   }
-  &.--frameworks {
+  &.--frameworks_libraries {
     background: #1671cf;
   }
   &.--databases {

@@ -39,9 +39,10 @@ const Contact = () => {
       <SEO title="Contact" />
       <Container>
         <h1 data-testid="headline">Get in touch</h1>
+        <p>Wanna talk? Send me an email through the form below or get in touch through my social media profiles.</p>
         <p>
-          Wanna talk? Send me an email through the form below or get in touch
-          through my social media profiles.
+          <SideNote>Side Note:</SideNote> Form is still <Underline>under development</Underline>. Feel free to email me
+          on <Underline>Zeeshan7826@gmail.com</Underline>
         </p>
 
         <Form
@@ -56,13 +57,7 @@ const Contact = () => {
           <Row>
             <label htmlFor="name">
               Your Name
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                ref={register({ required: true })}
-              />
+              <input id="name" name="name" type="text" required ref={register({ required: true })} />
             </label>
           </Row>
           {errors.name && <ErrorMessage error={errors.name} />}
@@ -84,12 +79,7 @@ const Contact = () => {
           <Row>
             <label htmlFor="message">
               Your Message
-              <textarea
-                name="message"
-                ref={register({ required: true })}
-                id="message"
-                required
-              />
+              <textarea name="message" ref={register({ required: true })} id="message" required />
             </label>
           </Row>
           {errors.message && <ErrorMessage error={errors.message} />}
@@ -148,4 +138,11 @@ const Row = styled.div`
   margin: 1.5rem auto 0;
 `;
 
+const Underline = styled.span`
+  text-decoration: underline;
+`;
+
+const SideNote = styled.span`
+  color: #e94e1b;
+`;
 export default Contact;

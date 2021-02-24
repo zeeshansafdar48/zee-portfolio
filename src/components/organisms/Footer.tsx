@@ -32,30 +32,18 @@ const Footer = () => (
     <nav>
       <Menu data-testid="footer-menu">
         <li data-testid="github">
-          <a
-            href="https://github.com/jakeherp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/zeeshansafdar48" target="_blank" rel="noopener noreferrer">
             Github
           </a>
         </li>
         <li data-testid="linkedin">
-          <a
-            href="https://www.linkedin.com/in/jacobherper/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.linkedin.com/in/zeeshan-safdar-683861131/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
         </li>
         <li data-testid="twitter">
-          <a
-            href="https://twitter.com/jakeherp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Twitter
+          <a href="https://www.facebook.com/zeeshansafdar48/" target="_blank" rel="noopener noreferrer">
+            Facebook
           </a>
         </li>
       </Menu>

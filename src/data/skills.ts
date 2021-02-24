@@ -3,28 +3,28 @@ interface ISkills {
 }
 
 export const skills: ISkills = {
+  all: [], // 💥 very important to make it empty array as logic define in code to populate it with All
   technologies: [
     'HTML5',
-    'CSS',
+    'CSS3',
     'Sass',
     'JavaScript',
     'TypeScript',
     'GraphQL',
     'ES6',
-    'PHP',
+    '.Net',
+    'Node Js',
+    'C#',
+    'React',
+    'Express Js',
+    'Gatsby',
+    'Redux',
   ],
-  frameworks: ['React', 'Vue.js', 'Gatsby', 'Next.js', 'Svelte'],
-  databases: ['MySQL', 'MongoDB', 'Firebase'],
-  cms: ['WordPress', 'Drupal', 'Contentful', 'Sanity.io'],
-  various: ['SEO', 'Scrum', 'Jira'],
-  design: [
-    'Adobe Illustrator',
-    'Adobe InDesign',
-    'Adobe Photoshop',
-    'Sketch',
-    'Zeplin',
-    'Figma',
-  ],
+  frameworks_libraries: ['Bootstrap', 'Tailwind CSS', 'Ant Design', 'Material-UI'],
+  databases: ['MSSQL', 'MongoDB'],
+  cms: ['WordPress', 'Strapi', 'Netlify CMS'],
+  various: ['Scrum', 'Jira', 'MVC', 'Git'],
+  //design: ['Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Sketch', 'Zeplin', 'Figma'],
   // softSkills: [
   //   "Strong communication",
   //   "Leadership",

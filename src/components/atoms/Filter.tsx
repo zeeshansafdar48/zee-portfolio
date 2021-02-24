@@ -11,7 +11,7 @@ interface IProps {
 
 const Filter = ({ name, setFilter, currentFilter }: IProps) => {
   const clickHandler = () => {
-    if (currentFilter === name) {
+    if (currentFilter === name || name === 'all') {
       setFilter('');
     } else {
       setFilter(name);

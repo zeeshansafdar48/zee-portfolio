@@ -30,7 +30,7 @@ const Headline = styled.h2`
 const Logo = () => (
   <Headline>
     {' '}
-    &lt;<span class="accent">Zeeshan</span> Safdar <span class="accent">/</span>
+    &lt;<span className="accent">Zeeshan</span> Safdar <span className="accent">/</span>
     &gt;
   </Headline>
   // <div>

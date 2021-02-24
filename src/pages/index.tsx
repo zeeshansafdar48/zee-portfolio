@@ -138,8 +138,7 @@ const IndexPage = () => {
               backSpeed={20}
               strings={[
                 "I'm <span class='accent'>Zeeshan</span> Safdar.",
-                "I'm a <span class='accent'>software engineer</span>.",
-                "I'm an <span class='accent'>entrepreneur</span>.",
+                "I'm a <span class='accent'>Associate Software Engineer</span>.",
                 "I'm a <span class='accent'>creative</span> mind.",
               ]}
               smartBackspace
@@ -151,8 +150,8 @@ const IndexPage = () => {
             />
           </Headline>
           <Text>
-            As a senior front-end engineer with years of experience I create
-            amazing websites and web apps to make the internet a better place.{' '}
+            As a Associate Software Engineer with 3 years of experience I create amazing websites and web apps to make
+            the internet a better place.{' '}
             <strong>
               <Link to="/contact/">Get in touch</Link>
             </strong>{' '}
