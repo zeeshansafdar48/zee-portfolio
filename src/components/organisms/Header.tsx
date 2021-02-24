@@ -49,7 +49,7 @@ const Header = () => {
           <Logo />
         </Link>
       </LogoWrapper>
-      {/* <ThemeToggle data-testid="themeToggle" /> */}
+      <ThemeToggle data-testid="themeToggle" />
     </Head>
   );
 };
