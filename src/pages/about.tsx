@@ -30,26 +30,22 @@ const About = () => {
           <Name data-testid="headline">Hey, I'm Zeeshan Safdar</Name>
           <JobTitle>A senior Front-End Engineer from London, UK</JobTitle>
           <Text>
-            As a passionate front-end developer, I create amazing websites and
-            web apps to make the internet a better place. I am an advocate for
-            web performance and accessibility as well as a JAMstack enthusiast
-            with experience in serverless technologies.
+            As a passionate front-end developer, I create amazing websites and web apps to make the internet a better
+            place. I am an advocate for web performance and accessibility as well as a JAMstack enthusiast with
+            experience in serverless technologies.
           </Text>
           <Text>
-            I am {age('1990-11-06')} years old and have been a web developer for
-            as long as I can think. The technologies I work with are JavaScript,
-            HTML and CSS with a focus on the frameworks React.js, Gatsby,
-            Next.js, Node and Express. I use code not only to do my day-to-day
-            job, but also to solve everyday problems I come across.
+            I am {age('1990-11-06')} years old and have been a web developer for as long as I can think. The
+            technologies I work with are JavaScript, HTML and CSS with a focus on the frameworks React.js, Gatsby,
+            Next.js, Node and Express. I use code not only to do my day-to-day job, but also to solve everyday problems
+            I come across.
           </Text>
           <Text>
-            When I am not writing code I love to spend time with my wife and{' '}
-            {age('2018-05-26')} year old daughter at home in London or
-            travelling around the world. We are quite a multi-cultural family
-            with me having grown up in Germany 🇩🇪 and my wife being from Mexico
-            🇲🇽, which is why we raise our daughter trilingual. I myself speak
-            five languages (some better than others). Furthermore I enjoy
-            cooking fresh food when I come home after a long day at the office.
+            When I am not writing code I love to spend time with my wife and {age('2018-05-26')} year old daughter at
+            home in London or travelling around the world. We are quite a multi-cultural family with me having grown up
+            in Germany 🇩🇪 and my wife being from Mexico 🇲🇽, which is why we raise our daughter trilingual. I myself
+            speak five languages (some better than others). Furthermore I enjoy cooking fresh food when I come home
+            after a long day at the office.
           </Text>
         </Section>
         <Section>
@@ -60,12 +56,7 @@ const About = () => {
                 <div data-testid="filters">
                   Filter:
                   {skillCategories.map((skill) => (
-                    <Filter
-                      key={skill}
-                      name={skill}
-                      setFilter={setFilter}
-                      currentFilter={filter}
-                    />
+                    <Filter key={skill} name={skill} setFilter={setFilter} currentFilter={filter} />
                   ))}
                 </div>
               </ScreenOnly>
@@ -73,10 +64,7 @@ const About = () => {
                 const cat = skills[category];
                 if (filter !== '' && filter !== category) return;
                 return cat.map((ability: string, index: number) => (
-                  <Badge
-                    key={`${category}-${index + 1}`}
-                    className={`--${category}`}
-                  >
+                  <Badge key={`${category}-${index + 1}`} className={`--${category}`}>
                     {ability}
                   </Badge>
                 ));
@@ -113,14 +101,7 @@ const About = () => {
           <Title>Work Experience</Title>
           <Jobs id={`jobs-${showJobs ? 'open' : 'closed'}`}>
             {displayJobs.map((job) => (
-              <Job
-                key={job.id}
-                title={job.title}
-                company={job.company}
-                place={job.place}
-                from={job.from}
-                to={job.to}
-              >
+              <Job key={job.id} title={job.title} company={job.company} place={job.place} from={job.from} to={job.to}>
                 <List>
                   {job.tasks.map((task, index) => (
                     <li key={`task-${index}`}>{task}</li>
@@ -129,20 +110,12 @@ const About = () => {
               </Job>
             ))}
           </Jobs>
-          <ReadMore onClick={() => toggleJobs()}>
-            {!showJobs ? 'Show more' : 'Show less'}
-          </ReadMore>
+          <ReadMore onClick={() => toggleJobs()}>{!showJobs ? 'Show more' : 'Show less'}</ReadMore>
         </Section>
         <Section>
           <Centre>
-            <Text>
-              Recruiters, you can find my up-to-date CV as a PDF download by
-              clicking the button below.
-            </Text>
-            <Button
-              href="/docs/cv-jacob_herper-2020.pdf"
-              download="jacob_herper-cv.pdf"
-            >
+            <Text>Recruiters, you can find my up-to-date CV as a PDF download by clicking the button below.</Text>
+            <Button href="/docs/cv-jacob_herper-2020.pdf" download="jacob_herper-cv.pdf">
               Download CV
             </Button>
           </Centre>
