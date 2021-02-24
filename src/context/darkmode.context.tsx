@@ -12,7 +12,7 @@ const defaults = {
 const DarkModeContext = createContext<any>(defaults);
 
 export const Provider = ({ children }: IProps) => {
-  const [darkMode, toggleDarkMode] = useState<boolean>(true);
+  const [darkMode, toggleDarkMode] = useState<boolean>(defaults.darkMode);
 
   const changeMode = (currentMode: boolean) => {
     try {
