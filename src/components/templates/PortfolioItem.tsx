@@ -36,8 +36,7 @@ interface IProps {
   };
 }
 
-const PortfolioItem = ({ data, pageContext }: any) => {
-  console.log('data', data);
+const PortfolioItem = ({ data, pageContext }: IProps) => {
   const {
     title,
     description,
@@ -45,11 +44,8 @@ const PortfolioItem = ({ data, pageContext }: any) => {
     type,
     content: { json: content },
     technologies,
-    slug,
+    url,
   } = data.contentfulPost;
-  // console.log('technologies', technologies);
-  // const content = ['sdfjlasdfjlaksdfjasdjsadlfkjaskdf asdkfjsalkdf', 'asdfasdfd'];
-  // const technologies = ['abc', 'def', 'geg'];
   const { previous, next } = pageContext;
 
   return (
@@ -63,7 +59,7 @@ const PortfolioItem = ({ data, pageContext }: any) => {
         <p data-testid="projectTechnologies">
           <strong>Technologies used:</strong> {technologies.join(', ')}
         </p>
-        <Button href={slug} target="_blank" rel="noopener noreferrer" data-testid="projectLink">
+        <Button href={url} target="_blank" rel="noopener noreferrer" data-testid="projectLink">
           Visit project
         </Button>
         <Pagination>

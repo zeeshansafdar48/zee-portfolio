@@ -104,8 +104,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jacob Herper Portfolio`,
-        short_name: `Herper.io`,
+        name: `Zeeshan Safdar Portfolio`,
+        short_name: `https://zeeshan-safdar-portfolio.herokuapp.com/`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#e94e1b`,

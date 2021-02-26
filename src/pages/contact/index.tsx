@@ -85,7 +85,11 @@ const Contact = () => {
           {errors.message && <ErrorMessage error={errors.message} />}
 
           <Row>
-            <button disabled={isSubmitting} type="submit">
+            <button
+              disabled={true}
+              // disabled={isSubmitting}
+              type="submit"
+            >
               Send &raquo;
             </button>
           </Row>

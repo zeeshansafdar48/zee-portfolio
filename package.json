@@ -4,9 +4,9 @@
   "displayName": "Herper.io",
   "version": "2.1.15",
   "author": {
-    "name": "Jacob Herper",
-    "email": "jacob@herper.io",
-    "url": "https://herper.io/"
+    "name": "Zeeshan Safdar",
+    "email": "zeeshan7826@gmail.com",
+    "url": "https://zeeshan-safdar-portfolio.herokuapp.com/"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
@@ -115,10 +115,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakeherp/portfolio"
+    "url": "https://github.com/zeeshansafdar48/zee-portfolio"
   },
   "bugs": {
-    "url": "https://github.com/jakeherp/portfolio/issues"
+    "url": "https://github.com/zeeshansafdar48/zee-portfolio/issues"
   },
   "snyk": true
 }

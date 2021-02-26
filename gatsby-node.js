@@ -21,7 +21,6 @@ exports.createPages = ({ graphql, actions }) => {
     if (result.errors) {
       throw result.errors;
     }
-    console.log('result of post', result);
 
     const posts = result.data.allContentfulPost.edges;
 
