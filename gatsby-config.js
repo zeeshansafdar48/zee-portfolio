@@ -50,12 +50,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
-        dsn:
-          'https://0029c0e1980d488eb702e79b1303a83e@o383121.ingest.sentry.io/5212982',
+        dsn: 'https://0029c0e1980d488eb702e79b1303a83e@o383121.ingest.sentry.io/5212982',
         // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
         environment: process.env.NODE_ENV,
-        enabled: (() =>
-          ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
+        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
       },
     },
     `gatsby-plugin-typescript`,
@@ -76,13 +74,13 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-source-contentful`,
-    //   options: {
-    //     spaceId: `zqytr868z2zh`,
-    //     accessToken: `O6XizypIMt-waoepOGupGOH6PsfM5nObltkz-uOeQlc`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `yvg3igdf1lco`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -91,8 +89,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: 'portfolio',
         // Url to query from
-        url:
-          'https://api-ap-northeast-1.graphcms.com/v2/cklgnu8lhschh01xq4dji6ji7/master',
+        url: 'https://api-ap-northeast-1.graphcms.com/v2/cklgnu8lhschh01xq4dji6ji7/master',
       },
     },
     {

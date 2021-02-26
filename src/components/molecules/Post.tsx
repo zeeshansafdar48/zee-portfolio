@@ -9,7 +9,7 @@ interface IProps {
     title: string;
     slug: string;
     image: {
-      url: any;
+      fluid: any;
     };
     type: string;
   };
@@ -18,8 +18,7 @@ interface IProps {
 const Post = ({ data: { title, slug, image, type } }: IProps) => (
   <Item data-testid={`portfolioItem${camelCase(title, { pascalCase: true })}`}>
     <Link to={`/portfolio/${slug}/`}>
-      {/* <Img fluid={image.url} /> */}
-      <img src={image.url} />
+      <Img fluid={image.fluid} />
       <Overlay>
         <h3>{title}</h3>
         <small>{type}</small>

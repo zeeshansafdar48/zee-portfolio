@@ -10,19 +10,19 @@ import Button from 'Atoms/Button';
 
 interface IProps {
   data: {
-    // contentfulItem: {
-    //   title: string;
-    //   description: string;
-    //   featured_image: {
-    //     fluid: any;
-    //   };
-    //   type: string;
-    //   content: {
-    //     json: any;
-    //   };
-    //   technologies: string[];
-    //   url: string;
-    // };
+    contentfulPost: {
+      title: string;
+      description: string;
+      featuredImage: {
+        fluid: any;
+      };
+      type: string;
+      content: {
+        json: any;
+      };
+      technologies: string[];
+      url: string;
+    };
   };
   pageContext: {
     previous: {
@@ -40,39 +40,30 @@ const PortfolioItem = ({ data, pageContext }: any) => {
   console.log('data', data);
   const {
     title,
-    // description,
-    // featured_image: image,
+    description,
+    featuredImage: image,
     type,
-    // content: { json: content },
-    // technologies,
+    content: { json: content },
+    technologies,
     slug,
-  } = data.portfolio.post;
-  const content = [
-    'sdfjlasdfjlaksdfjasdjsadlfkjaskdf asdkfjsalkdf',
-    'asdfasdfd',
-  ];
-  const technologies = ['abc', 'def', 'geg'];
+  } = data.contentfulPost;
+  // console.log('technologies', technologies);
+  // const content = ['sdfjlasdfjlaksdfjasdjsadlfkjaskdf asdkfjsalkdf', 'asdfasdfd'];
+  // const technologies = ['abc', 'def', 'geg'];
   const { previous, next } = pageContext;
 
   return (
     <>
-      {/* <SEO title={title} description={description} />
-      <Image fluid={image.fluid} alt={title} style={{ maxHeight: '400px' }} /> */}
+      <SEO title={title} description={description} />
+      <Image fluid={image.fluid} alt={title} style={{ maxHeight: '400px' }} />
       <Container>
         <h2 data-testid="projectTitle">{title}</h2>
         <h3 data-testid="projectType">{type}</h3>
-        {/* <div data-testid="projectBody">
-          {documentToReactComponents(content)}
-        </div> */}
+        <div data-testid="projectBody">{documentToReactComponents(content)}</div>
         <p data-testid="projectTechnologies">
           <strong>Technologies used:</strong> {technologies.join(', ')}
         </p>
-        <Button
-          href={slug}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-testid="projectLink"
-        >
+        <Button href={slug} target="_blank" rel="noopener noreferrer" data-testid="projectLink">
           Visit project
         </Button>
         <Pagination>
@@ -123,28 +114,28 @@ const Pagination = styled.ul`
 `;
 
 export const pageQuery = graphql`
-  query($slug: String) {
+  query PortfolioItemBySlug($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    portfolio {
-      post(where: { slug: $slug }) {
-        id
-        title
-        slug
-        type
-        image {
-          id
-          url
+    contentfulPost(slug: { eq: $slug }) {
+      title
+      client
+      type
+      technologies
+      url
+      description
+      content {
+        json
+      }
+      featuredImage {
+        fluid(maxWidth: 1920, quality: 70) {
+          ...GatsbyContentfulFluid
         }
       }
     }
   }
 `;
-
-// fluid(maxWidth: 1920, quality: 70) {
-//   ...GatsbyContentfulFluid
-// }

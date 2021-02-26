@@ -6,26 +6,25 @@ import Container from 'Atoms/Container';
 import Post from 'Molecules/Post';
 import SEO from 'Molecules/Seo';
 
-// interface IProps {
-//   data: {
-//     allContentfulItem: {
-//       edges: {
-//         node: {
-//           title: string;
-//           slug: string;
-//           image: {
-//             fluid: any;
-//           };
-//           type: string;
-//         };
-//       }[];
-//     };
-//   };
-// }
+interface IProps {
+  data: {
+    allContentfulPost: {
+      edges: {
+        node: {
+          title: string;
+          slug: string;
+          image: {
+            fluid: any;
+          };
+          type: string;
+        };
+      }[];
+    };
+  };
+}
 
-const Portfolio = ({ data }: any) => {
-  // const posts = data.allContentfulItem.edges;
-  const posts = data.portfolio.posts;
+const Portfolio = ({ data }: IProps) => {
+  const posts = data.allContentfulPost.edges;
 
   return (
     <>
@@ -34,16 +33,16 @@ const Portfolio = ({ data }: any) => {
         <h2 data-testid="headline">Portfolio</h2>
         <Grid>
           {posts.map((post) => {
-            console.log('post', post);
+            const { node } = post;
             return (
               <Post
                 data={{
-                  title: post.title,
-                  slug: post.slug,
-                  image: post.image,
-                  type: post.type,
+                  title: node.title,
+                  slug: node.slug,
+                  image: node.image,
+                  type: node.type,
                 }}
-                // key={post.slug}
+                key={node.slug}
               />
             );
           })}
@@ -81,15 +80,18 @@ export const pageQuery = graphql`
         title
       }
     }
-    portfolio {
-      posts {
-        id
-        title
-        slug
-        type
-        image {
-          id
-          url
+    allContentfulPost {
+      edges {
+        node {
+          title
+          slug
+          client
+          type
+          image: featuredImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
