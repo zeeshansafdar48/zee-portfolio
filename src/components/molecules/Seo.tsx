@@ -32,7 +32,7 @@ const SeoHelmet = ({ description, lang, meta, title, keywords }: IProps) => {
 
   const metaDescription =
     description ||
-    'Front-End Software Engineer with a focus on JavaScript and React.js. I have more than 10 years experience working in software engineering.';
+    'Web Developer with a focus on MERN Stack. I have more than 3 years experience working in software engineering.';
   return (
     <Helmet
       htmlAttributes={{
@@ -63,7 +63,7 @@ const SeoHelmet = ({ description, lang, meta, title, keywords }: IProps) => {
         },
         {
           property: `og:url`,
-          content: `https://herper.io/`,
+          content: `https://zeeshan-safdar-portfolio.herokuapp.com/`,
         },
         {
           name: `twitter:card`,

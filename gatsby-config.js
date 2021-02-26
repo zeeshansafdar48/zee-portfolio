@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Zeeshan Safdar`,
-    description: `Front-End Software Engineer with a focus on JavaScript and React.js. I have more than 10 years experience working in software engineering.`,
+    description: `Web Developer with a focus on MERN Stack. I have more than 3 years experience working in software engineering.`,
     author: `Zeeshan Safdar <zeeshan7826@gmail.com>`,
     siteUrl: `https://herper.io`,
   },

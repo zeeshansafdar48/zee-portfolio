@@ -29,16 +29,15 @@ const About = () => {
       <Container>
         <Section>
           <Name data-testid="headline">Hey, I'm Zeeshan Safdar</Name>
-          <JobTitle>A Software Engineer from Lahore, Pakistan</JobTitle>
+          <JobTitle>A Web Developer from Lahore, Pakistan</JobTitle>
           <Text>
-            As a passionate software engineer 😃, I create amazing websites and web apps to make the internet a better
+            As a passionate Web Developer 😃, I create amazing websites and web apps to make the internet a better
             place. I am an advocate for web performance and accessibility as well as a MERN Stack enthusiast.
           </Text>
           <Text>
             I am {age('1996-05-31')} years old and have been a web developer for as long as I can think. The
-            technologies I work with are JavaScript, HTML and CSS with a focus on the frameworks React.js, Gatsby, ,
-            Node and Express. I use code not only to do my day-to-day job, but also to solve everyday problems I come
-            across.
+            technologies I work with are JavaScript, HTML and CSS with a focus on the MERN Stack. I use code not only to
+            do my day-to-day job, but also to solve everyday problems I come across.
           </Text>
           <Text>
             When I am not writing code I love to spend time with my family 👨‍👩‍👧‍👦 and read latest technologies articles
