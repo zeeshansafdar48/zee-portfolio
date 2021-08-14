@@ -40,6 +40,9 @@ const Button = styled.button`
     opacity: 1;
     border-bottom: 2px solid ${getTextColor};
   }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default Filter;

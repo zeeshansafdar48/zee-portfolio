@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { getTextColor } from 'Templates/Layout';
 import SEO from 'Molecules/Seo';
 import Job from 'Molecules/Job';
 import Button from 'Atoms/Button';
@@ -15,11 +14,9 @@ import { jobs } from 'Data/jobs';
 import { skills } from 'Data/skills';
 
 const About = () => {
-  const { toggle: toggleJobs, value: showJobs } = useToggle(false);
+  const { value: showJobs } = useToggle(false);
   const [filter, setFilter] = useState<string>('');
 
-  const truncatedJobs = jobs.slice(0, 2);
-  //const displayJobs = showJobs ? jobs : truncatedJobs;
   const displayJobs = jobs;
 
   const skillCategories = Object.keys(skills);
@@ -249,18 +246,6 @@ const List = styled.ul`
 // `;
 
 const ScreenOnly = styled.div`
-  @media print {
-    display: none;
-  }
-`;
-
-const ReadMore = styled.button`
-  background: transparent;
-  border: none;
-  display: block;
-  margin: 0 auto;
-  color: ${getTextColor};
-
   @media print {
     display: none;
   }

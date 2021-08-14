@@ -7,7 +7,7 @@ module.exports = {
     title: `Zeeshan Safdar`,
     description: `Web Developer with a focus on MERN Stack. I have more than 3 years experience working in software engineering.`,
     author: `Zeeshan Safdar <zeeshan7826@gmail.com>`,
-    siteUrl: `https://herper.io`,
+    siteUrl: `https://zeeshan-safdar.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-eslint`,
