@@ -46,7 +46,8 @@
     "react-typed": "^1.2.0",
     "snyk": "^1.359.0",
     "styled-components": "^5.1.1",
-    "styled-theming": "^2.2.0"
+    "styled-theming": "^2.2.0",
+    "tsparticles": "^1.33.3"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.19.0",
