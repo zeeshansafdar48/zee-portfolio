@@ -105,7 +105,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Zeeshan Safdar Portfolio`,
-        short_name: `https://zeeshan-safdar-portfolio.herokuapp.com/`,
+        short_name: `https://zeeshan-safdar.netlify.app/`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#e94e1b`,

@@ -13,7 +13,7 @@ interface IProps {
     contentfulPost: {
       title: string;
       description: string;
-      featuredImage: {
+      image: {
         fluid: any;
       };
       type: string;
@@ -22,6 +22,7 @@ interface IProps {
       };
       technologies: string[];
       url: string;
+      isUrlExist: boolean;
     };
   };
   pageContext: {
@@ -40,18 +41,19 @@ const PortfolioItem = ({ data, pageContext }: IProps) => {
   const {
     title,
     description,
-    featuredImage: image,
+    image,
     type,
     content: { json: content },
     technologies,
     url,
+    isUrlExist,
   } = data.contentfulPost;
   const { previous, next } = pageContext;
 
   return (
     <>
       <SEO title={title} description={description} />
-      <Image fluid={image.fluid} alt={title} style={{ maxHeight: '400px' }} />
+      <Image fluid={image.fluid} alt={title} style={{ maxWidth: '90%', margin: '0 auto' }} />
       <Container>
         <h2 data-testid="projectTitle">{title}</h2>
         <h3 data-testid="projectType">{type}</h3>
@@ -59,9 +61,11 @@ const PortfolioItem = ({ data, pageContext }: IProps) => {
         <p data-testid="projectTechnologies">
           <strong>Technologies used:</strong> {technologies.join(', ')}
         </p>
-        <Button href={url} target="_blank" rel="noopener noreferrer" data-testid="projectLink">
-          Visit project
-        </Button>
+        {isUrlExist && (
+          <Button href={url} target="_blank" rel="noopener noreferrer" data-testid="projectLink">
+            Visit project
+          </Button>
+        )}
         <Pagination>
           {previous && (
             <li data-testid="previous">
@@ -123,11 +127,12 @@ export const pageQuery = graphql`
       type
       technologies
       url
+      isUrlExist
       description
       content {
         json
       }
-      featuredImage {
+      image {
         fluid(maxWidth: 1920, quality: 70) {
           ...GatsbyContentfulFluid
         }

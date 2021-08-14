@@ -63,7 +63,7 @@ const SeoHelmet = ({ description, lang, meta, title, keywords }: IProps) => {
         },
         {
           property: `og:url`,
-          content: `https://zeeshan-safdar-portfolio.herokuapp.com/`,
+          content: `https://zeeshan-safdar.netlify.app/`,
         },
         {
           name: `twitter:card`,
@@ -85,9 +85,9 @@ const SeoHelmet = ({ description, lang, meta, title, keywords }: IProps) => {
         .concat(
           keywords && keywords.length > 0
             ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
+              name: `keywords`,
+              content: keywords.join(`, `),
+            }
             : []
         )
         .concat(meta)}
