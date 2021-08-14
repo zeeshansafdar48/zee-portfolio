@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
-import storage from 'local-storage-fallback';
+import { useState } from 'react';
+// import storage from 'local-storage-fallback';
 
-export default function useTheme(defaultTheme = { mode: 'dark' }) {
-  const [colourTheme, setColourTheme] = useState(getInitialTheme);
+export default function useTheme() {
+  const [colourTheme, setColourTheme] = useState({ mode: 'dark' });
 
-  function getInitialTheme() {
-    const savedTheme = storage.getItem('colourTheme');
-    return savedTheme ? JSON.parse(savedTheme) : defaultTheme;
-  }
+  // function getInitialTheme() {
+  //   const savedTheme = storage.getItem('colourTheme');
+  //   return savedTheme ? JSON.parse(savedTheme) : defaultTheme;
+  // }
 
-  useEffect(() => {
-    storage.setItem('colourTheme', JSON.stringify(colourTheme));
-  }, [colourTheme]);
+  // useEffect(() => {
+  //   storage.setItem('colourTheme', JSON.stringify(colourTheme));
+  // }, [colourTheme]);
 
   return {
     ...colourTheme,
