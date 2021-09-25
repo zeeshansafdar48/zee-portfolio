@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import PostFilter from 'Atoms/PostFilter';
 
 import Container from 'Atoms/Container';
 import Post from 'Molecules/Post';
@@ -24,12 +25,34 @@ interface IProps {
 }
 
 const Portfolio = ({ data }: IProps) => {
-  const posts = data.allContentfulPost.edges;
+  const [filter, setFilter] = useState('all');
+  const [posts, setPosts] = useState(data.allContentfulPost.edges);
+
+  useEffect(() => {
+    if (filter === 'all') {
+      setPosts(data.allContentfulPost.edges);
+    } else {
+      setPosts(
+        data.allContentfulPost.edges.filter(
+          (post: any) => post.node.type.toLowerCase() === filter.toLowerCase()
+        )
+      );
+    }
+  }, [filter])
 
   return (
     <>
       <SEO title="Portfolio" />
-      <Container>
+      <Container setHeight={'70vh'}>
+        <ScreenOnly>
+          <Filters>
+            <div data-testid="filters">
+              {['all', 'web development', 'web design'].map((skill) => (
+                <PostFilter key={skill} name={skill} setFilter={setFilter} currentFilter={filter} />
+              ))}
+            </div>
+          </Filters>
+        </ScreenOnly>
         <Grid>
           {posts.map((post) => {
             const { node } = post;
@@ -63,6 +86,16 @@ const Grid = styled.div`
   }
 `;
 
+const ScreenOnly = styled.div`
+  @media print {
+    display: none;
+  }
+`;
+
+const Filters = styled.div`
+  text-align: center;
+  margin: 1rem 0;
+`;
 export const pageQuery = graphql`
   query {
     site {

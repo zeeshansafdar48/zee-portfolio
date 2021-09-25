@@ -105,12 +105,12 @@ const About = () => {
           {/* <ReadMore onClick={() => toggleJobs()}>{!showJobs ? 'Show more' : 'Show less'}</ReadMore> */}
         </Section>
         <Section>
-          <Centre>
+          <Center>
             <Text>Recruiters, you can find my up-to-date CV as a PDF download by clicking the button below.</Text>
             <Button href="/docs/Zeeshan_Safdar-cv.pdf" download="Zeeshan_Safdar-cv.pdf">
               Download CV
             </Button>
-          </Centre>
+          </Center>
         </Section>
       </Container>
     </>
@@ -251,6 +251,6 @@ const ScreenOnly = styled.div`
   }
 `;
 
-const Centre = styled.div`
+const Center = styled.div`
   text-align: center;
 `;
