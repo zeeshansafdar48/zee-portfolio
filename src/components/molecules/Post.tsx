@@ -18,7 +18,7 @@ interface IProps {
 const Post = ({ data: { title, slug, image, type } }: IProps) => (
   <Item data-testid={`portfolioItem${camelCase(title, { pascalCase: true })}`}>
     <Link to={`/portfolio/${slug}/`}>
-      <Img fluid={image.fluid} />
+      <Img style={{ height: '100%' }} fluid={image.fluid} />
       <Overlay>
         <h3>{title}</h3>
         <small>{type}</small>
@@ -30,6 +30,7 @@ const Post = ({ data: { title, slug, image, type } }: IProps) => (
 const Item = styled.div`
   position: relative;
   overflow: hidden;
+  border-radius: 0.5rem;
   img {
     transition: transform 0.3s ease !important;
   }

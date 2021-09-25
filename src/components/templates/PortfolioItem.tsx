@@ -103,11 +103,22 @@ const Pagination = styled.ul`
 
   li {
     a {
-      color: #ccc;
       text-decoration: none;
       transition: 0.2s;
+      &::after {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 0%;
+        margin-top: -6px;
+        background: #e94e1b;
+        transition: all 0.2s ease 0s;
+      }
       &:hover {
-        color: #999;
+        border-bottom: none;
+        &::after {
+          width: 110%;
+        }
       }
     }
   }
