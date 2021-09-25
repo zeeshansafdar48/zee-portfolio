@@ -30,7 +30,6 @@ const Portfolio = ({ data }: IProps) => {
     <>
       <SEO title="Portfolio" />
       <Container>
-        <h2 data-testid="headline">Portfolio</h2>
         <Grid>
           {posts.map((post) => {
             const { node } = post;
@@ -47,21 +46,12 @@ const Portfolio = ({ data }: IProps) => {
             );
           })}
         </Grid>
-        <Centered>
-          This is a small selection of projects I worked on.
-          <br />
-        </Centered>
       </Container>
     </>
   );
 };
 
 export default Portfolio;
-
-const Centered = styled.p`
-  margin-top: 2rem;
-  text-align: center;
-`;
 
 const Grid = styled.div`
   display: grid;

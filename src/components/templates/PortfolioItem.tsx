@@ -53,7 +53,7 @@ const PortfolioItem = ({ data, pageContext }: IProps) => {
   return (
     <>
       <SEO title={title} description={description} />
-      <Image fluid={image.fluid} alt={title} style={{ maxWidth: '90%', margin: '0 auto' }} />
+      <Image fluid={image.fluid} alt={title} style={{ maxWidth: '80%', margin: '0 auto', borderRadius: '0.5rem' }} />
       <Container>
         <h2 data-testid="projectTitle">{title}</h2>
         <h3 data-testid="projectType">{type}</h3>

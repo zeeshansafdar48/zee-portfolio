@@ -4,6 +4,7 @@ import Menu from 'Atoms/Menu';
 
 const Foot = styled.footer`
   padding: 0 3% 1rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

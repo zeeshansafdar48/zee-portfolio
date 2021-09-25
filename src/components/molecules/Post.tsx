@@ -18,7 +18,7 @@ interface IProps {
 const Post = ({ data: { title, slug, image, type } }: IProps) => (
   <Item data-testid={`portfolioItem${camelCase(title, { pascalCase: true })}`}>
     <Link to={`/portfolio/${slug}/`}>
-      <Img style={{ height: '100%' }} fluid={image.fluid} />
+      <Img style={{ height: '100%', opacity: '0.7' }} fluid={image.fluid} />
       <Overlay>
         <h3>{title}</h3>
         <small>{type}</small>
@@ -44,13 +44,13 @@ const Overlay = styled.div`
   bottom: 0;
   text-align: center;
   width: 100%;
-  transform: translateY(-50%);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   pointer-events: none;
   h3 {
     margin: 0;
     color: #fff;
   }
+  background-color: #20202041;
 `;
 
 export default Post;
